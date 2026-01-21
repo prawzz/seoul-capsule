@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Memory Archive</title>
+
+  <!-- Leaflet -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+  <!-- Your CSS -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+
+<body>
+
+  <!-- ===== Birthday Letter Overlay ===== -->
+  <div class="letterOverlay" id="letterOverlay">
+    <div class="letterCard">
+      <h2>Happy Birthday, Leila 🎂</h2>
+
+      <p>
+        I didn’t know when we met on that random hike in Seoul that we would spend such great times together in Korea.
+      </p>
+
+      <p>
+        This little website is just a way of saying:
+        these moments mattered to me, and are very precious.
+      </p>
+
+      <p>
+        This is a reminder that this chapter existed, and it was beautiful.
+        Let's meet again soon and have more fun!!!
+      </p>
+
+      <p style="margin-top:16px;">💛</p>
+
+      <button class="openCapsuleBtn" id="openCapsuleBtn" type="button">
+        Open the capsule ✨
+      </button>
+    </div>
+  </div>
+
+  <!-- ===== TOP BAR ===== -->
+  <header class="topbar">
+    <div class="brand">Memory Archive</div>
+
+    <div class="chips">
+      <button class="chip btn" id="celebrateBtn" type="button">Celebrate 🎆</button>
+      <button class="chip btn" id="surpriseBtn" type="button">Surprise 🎲</button>
+    </div>
+  </header>
+
+  <!-- ===== MAIN LAYOUT ===== -->
+  <main class="layout">
+
+    <!-- ===== LEFT COLUMN ===== -->
+    <section class="left">
+
+      <!-- HERO -->
+      <div class="hero">
+        <h1>
+          Happy Birthday,
+          <span id="herName">Leila씨</span> 🥳
+        </h1>
+
+        <p>A little time capsule of our memories 🫶</p>
+
+        <p style="margin-top:10px; color:#a7b0d6;">
+          This capsule holds some memories.
+          The full archive lives
+          <a href="https://drive.google.com/drive/folders/1UZpgGuoCNK3BH_5sCZWHq8MXzJZFZyqK?dmr=1&ec=wgc-drive-hero-goto"
+             target="_blank" rel="noopener">here</a> 📸
+        </p>
+      </div>
+
+      <!-- MAP -->
+      <div id="map" class="map"></div>
+
+      <!-- CHAPTER LIST -->
+      <div class="chapterList" id="chapterList"></div>
+    </section>
+
+    <!-- ===== RIGHT COLUMN ===== -->
+    <section class="right">
+      <div class="panel" id="panel">
+
+        <!-- PANEL HEADER -->
+        <div class="panelHeader">
+          <h2 id="panelTitle">Pick a chapter</h2>
+          <p id="panelSubtitle">Choose a pin on the map or a chapter card.</p>
+        </div>
+
+        <!-- MEMORY CHOICES -->
+        <div class="choices" id="choices"></div>
+
+        <!-- MEMORY BOX -->
+        <div class="memoryBox" id="memoryBox">
+          <div class="memoryText" id="memoryText"></div>
+          <div class="memoryPhotoWrap">
+            <img id="memoryImg" alt="" />
+          </div>
+        </div>
+
+        <!-- GALLERY -->
+        <div class="gallery" id="gallery"></div>
+
+        <!-- LINKS -->
+        <div class="links" id="chapterLinks"></div>
+
+        <!-- ===== MINI GAME ===== -->
+        <div class="miniGame" id="miniGame">
+          <div class="miniGameHeader">
+            <div>
+              <div class="miniTitle">Mini-Game: Match the Memory</div>
+              <div class="miniSub">A tiny puzzle while the map loads 🧠</div>
+            </div>
+            <button class="miniBtn" id="mgReset" type="button">Reset</button>
+          </div>
+
+          <div class="miniStats">
+            <span id="mgMoves">Moves: 0</span>
+            <span id="mgFound">Found: 0/6</span>
+          </div>
+
+          <div class="miniGrid" id="mgGrid"></div>
+
+          <div class="miniNote" id="mgNote">Find all pairs to unlock a secret message ✨</div>
+        </div>
+
+        <!-- ===== Daily French ===== -->
+        <div class="dailyFrenchCard" id="dailyFrenchCard">
+          <div class="dfHeader">
+            <div>
+              <div class="dfTitle">Daily French</div>
+              <div class="dfSub">One French word per day — explained in English</div>
+            </div>
+          </div>
+
+          <div class="dfWord" id="dfWord">…</div>
+
+          <div class="dfMeaning" id="dfMeaning">…</div>
+
+          <div class="dfExample">
+            <div class="dfExFr" id="dfExampleFr">…</div>
+            <div class="dfExEn" id="dfExampleEn">…</div>
+          </div>
+
+          <div class="dfMeta" id="dfMeta"></div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== LIGHTBOX ===== -->
+  <div class="lightbox" id="lightbox">
+    <img id="lightboxImg" alt="" />
+
+    <!-- navigation arrows -->
+    <button class="lbArrow left" id="lbPrev" aria-label="Previous" type="button">‹</button>
+    <button class="lbArrow right" id="lbNext" aria-label="Next" type="button">›</button>
+  </div>
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <!-- Your JS -->
+<script src="assets/js/app.js?v=4"></script>
+</body>
+</html>
